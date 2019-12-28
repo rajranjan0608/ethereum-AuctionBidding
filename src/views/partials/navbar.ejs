@@ -1,0 +1,83 @@
+<style>
+	.hover:hover{
+			background-color:#e7e7e7;
+	}
+    /* .topnav{
+        position: fixed; 
+        top: 0;
+        width:100%;
+    } */
+
+    @-webkit-keyframes tracking-in-expand {
+            0% {
+                letter-spacing: -0.5em;
+                opacity: 0;
+            }
+            40% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+            }
+            @keyframes tracking-in-expand {
+            0% {
+                letter-spacing: -0.5em;
+                opacity: 0;
+            }
+            40% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+            }
+
+            .tracking-in-expand:hover{
+                -webkit-animation: tracking-in-expand 2s cubic-bezier(1.000, 0.000, 0.000, 1.000) both;
+                        animation: tracking-in-expand 2s cubic-bezier(1.000, 0.000, 0.000, 1.000) both;
+            }
+
+            .tracking-in-expand{
+                -webkit-animation: tracking-in-expand 2s cubic-bezier(1.000, 0.000, 0.000, 1.000) both;
+                        animation: tracking-in-expand 2s cubic-bezier(1.000, 0.000, 0.000, 1.000) both;
+            }
+
+</style>
+
+
+<!--NAVIGATION BAR-->
+<div class="navigation"  id="about"></div>
+<nav class="navbar navbar-default navy  topnav">
+        <div class="navbar-header">
+
+            <!--NAVBAR HAMBURGER-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="/index" class="navbar-brand tracking-in-expand">BLOGSITE</a>
+
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        
+            <div class="nav navbar-nav navbar">
+                <li class="hover"><a href="/index">Home</a></li>
+                <li class="hover"><a href="#">Collaborators</a></li>
+                <li class="hover"><a href="#">About</a></li>
+            </div>
+        
+            <div class="nav navbar-nav navbar-right navright">
+                <li class="hover"><a href="#">Sign Up <i id="icon" class="fa fa-user-plus"></i> </a></li>
+                <li class="hover"><a href="#">Sign In <i id="icon" class="fa fa-user"></i> </a></li>
+    
+            </div>
+        </div>
+        
+
+</nav>
+<div>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Confirm your type</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<style>
+
+    #loading {
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+</style>
+
+<body>
+   
+    <div style="margin-top:20px; width: 450px;" class="container card"> 
+        
+        <span><b>Address: </b><font id="account" size=2></font></span>
+        <span><b>Username: </b><font id="username" size=2><%=currentUser.username%></font></span>      
+        
+        <font size=1 color='green' style="margin-top:10px; margin-bottom:-10px;">*Select user type from below two options. Remember once selected can't be changed.</font>
+
+        <hr>
+
+        <center style="margin-top:-15px; margin-bottom:-10px;">
+        
+            <div class="w3-section" id="content">
+                <button class="w3-button w3-green" style="width:100px;" onclick="App.createUploader();">Uploader</button>
+                <button class="w3-button w3-blue" style="width:100px;" onclick="App.createBidder();">Bidder</button><br>
+                <font size=1 color="blue" style="cursor: pointer;" onclick="location.href='/logout'">Not you? Logout here.</font>
+            </div>
+
+        </center>
+
+        <center>
+
+            <div id="loading" style="margin-top:10px; display:none; margin-bottom:5px;">
+            
+            </div>
+
+        </center>
+        
+    </div>
+
+    <div style="margin-top:20px; display:none" class="container card">
+
+        <table id="uploader" border="1">
+            <center>
+                <h6><b>Uploaders</b></h6>
+            </center>
+            <hr style="margin-top: -5px; margin-bottom: -1px;">
+            <tr style="text-align:center">
+                <td>Id</td>
+                <td>Username</td>
+                <td>Address</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div style="margin-top:20px; display:none" class="container card">
+
+        <table id="bidder" border=1>
+            <center>
+                <h6><b>Bidders</b></h6>
+            </center>
+            <hr style="margin-top: -5px; margin-bottom: -1px;">
+            <tr style="text-align:center">
+                <td>Id</td>
+                <td>Username</td>
+                <td>Address</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="truffle-contract.js"></script>
+<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+<script type="text/javascript" language="javascript" src="loadEthereum.js"></script>
+<script type="text/javascript" language="javascript" src="confirmType.js"></script>
+
+</html>

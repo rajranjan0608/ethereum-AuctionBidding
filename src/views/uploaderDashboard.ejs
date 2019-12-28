@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Uploader</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<style>
+
+    #loading {
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+</style>
+
+<body>
+
+    <div style="margin-top:20px; width: 650px;" class="container card w3-section">
+
+        <span><b>Address: </b><font id="account" size=2></font></span>
+        <span><b>Username: </b><font id="username" size=2><%=currentUser.username%></font></span>      
+
+        <hr>
+    
+        <center style="margin-bottom:10px;">
+            <button class="w3-button w3-green" style="width:150px;" onclick="uploadTenders();">Upload Tender</button>
+            <button class="w3-button w3-blue" style="width:150px;" onclick="showTenders();">My Tenders</button>
+            <button class="w3-button w3-red" style="width:150px;" onclick="showBids();">Show all Bids</button><br>
+            <font size=1 color="blue" style="cursor: pointer;" onclick="location.href='/logout'">Not you? Logout here.</font>
+        </center>
+
+    </div>  
+   
+    <div id="uploadTender" style="margin-top:20px; width: 450px; display: none" class="container card"> 
+
+        <center style="margin-top:-15px;">
+        
+            <div class="w3-section">
+
+                <form onSubmit="App.submitTender(); return false">
+                    <br>
+                    <span><b>Item Name</b><input class="form-control" id="itemName"></span><br>
+
+                    <span><b>Item Description</b><textarea class="form-control" id="itemDesc"></textarea></span><br>
+
+                    <span><b>Item Quantity</b><input class="form-control" type="number" id="itemQuantity"></span><br>
+
+                    <span id="content">
+                        <input class="w3-button w3-green" style="width:150px;" type="submit" value="Upload a Tender"><br>
+                    </span>
+                </form>
+
+            </div>
+
+            <div id="loading" style="display:none; margin-bottom:5px; margin-top:-30px">
+                
+            </div>
+
+        </center>
+        
+    </div>
+
+    <div id="tenderList" style="margin-top:20px; display:none" class="container card">
+
+        <table id="mytenders" class="table table-hover">
+            <center>
+                <h6><b>My Tenders</b></h6>
+            </center>
+            <hr style="margin-top: -5px; margin-bottom: -1px;">
+            <tr style="text-align:center">
+                <td>Id</td>
+                <td>Tender name</td>
+                <td>Quantity</td>
+            </tr>
+        </table>
+
+    </div>
+    <br>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="truffle-contract.js"></script>
+<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+<script type="text/javascript" language="javascript" src="loadEthereum.js"></script>
+<script type="text/javascript" language="javascript" src="uploaderDashboard.js"></script>
+
+</html>
